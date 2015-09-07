@@ -4,7 +4,7 @@
   "authors": [
     "Óscar Belmonte Fernández <oscar.belmonte@uji.es>"
   ],
-  "description": "First example of AngularJS",
+  "description": "Bootstrap example",
   "main": "index.html",
   "license": "MIT",
   "ignore": [
@@ -13,5 +13,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5"
+  }
 }
