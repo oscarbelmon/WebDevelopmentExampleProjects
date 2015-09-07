@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My first bootstrap web page</title>
+    <link href="../../bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <script src="../../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="../js/dataSourceSecond.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="starter-template">
+        <h1>This is my first web page</h1>
+        <div class="row" style="border: black dashed">
+            <div class="col-md-8" style="border: black solid">
+                <table class="table table-hover">
+                    <thead>
+                        <tr><td><strong>Name</strong></td><td><strong>Surname</strong></td></tr>
+                    </thead>
+                    <tbody id="peopleBody">
+                    <script>
+                        getData();
+                    </script>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-4" style="border: black solid">
+                <h2>Detail</h2>
+                <p>Name: <span id="name"></span></p>
+                <p></p>Surname: <span id="surname"></span></p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
