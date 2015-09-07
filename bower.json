@@ -1,0 +1,17 @@
+{
+  "name": "ExampleProjects",
+  "version": "0.0.1",
+  "authors": [
+    "Óscar Belmonte Fernández <oscar.belmonte@uji.es>"
+  ],
+  "description": "First example of AngularJS",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
