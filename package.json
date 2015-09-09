@@ -1,0 +1,22 @@
+{
+  "name": "example-projects",
+  "version": "0.0.1",
+  "description": "Example projects in NodeJS",
+  "author": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oscarbelmon/WebDevelopmentExampleProjects.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/oscarbelmon/WebDevelopmentExampleProjects/issues"
+  },
+  "homepage": "https://github.com/oscarbelmon/WebDevelopmentExampleProjects#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
