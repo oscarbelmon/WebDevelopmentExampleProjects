@@ -28,8 +28,9 @@ var people = [
 ];
 
 app.get('/', function (req, res) {
-    res.writeHead(200, {'Content-Type': 'application/json'});
-    res.end(JSON.stringify(people));
+    //res.writeHead(200, {'Content-Type': 'application/json'});
+    //res.end(JSON.stringify(people));
+    res.json(people);
 });
 
 var server = app.listen(3000, function () {
