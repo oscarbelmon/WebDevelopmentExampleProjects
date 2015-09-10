@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>First AngularJS</title>
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <script src="jquery/dist/jquery.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.js"></script>
+    <script src="angular/angular.min.js"></script>
+    <script src="../js/dataSource.js"></script>
+</head>
+<body ng-controller="MyController as myController">
+<div class="container">
+    <div class="starter-template">
+        <h1>Table populated with AngularJS controller</h1>
+        <table class="table table-hover">
+            <thead>
+            <tr><td><strong>Name</strong></td><td><strong>Surname</strong></td></tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="person in people">
+                <td>{{person.name}}</td>
+                <td>{{person.surname}}</td>
+                <td><td><button type='button' class='btn btn-info' data-toggle='modal' data-target='#myModal' ng-click='currentPerson($index)'>Info</button></button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Info</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Detailed info about the person goes here.</p>
+                    <p>Name: {{current_person.name}} Surname: {{current_person.surname}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
