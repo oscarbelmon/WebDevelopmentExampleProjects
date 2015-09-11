@@ -5,31 +5,23 @@
 var express = require("express");
 var app = express();
 
-// This is to manage the DB connection
-var mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost/people");
-
-var db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error: "));
-db.once("open", function(callback) {
-    console.log("Connection to the db established.");
-});
-
-var Person = require("./static/js/personModel.js");
-
-// End of DB management
+var Person = require("./static/js/models.js");
 
 app.use(express.static("bower_components"));
 app.use(express.static("Mongo/static"));
 
 var people = {};
-Person.find(function(error, _people) {
-    if(error) return console.error(error);
-    people = _people;
-});
+
+function getPeople() {
+    Person.find(function(error, _people) {
+        if(error) return console.error(error);
+        people = _people;
+    });
+}
 
 app.get('/', function (req, res) {
+    getPeople();
     res.json(people);
 });
 
@@ -37,10 +29,7 @@ app.delete("/remove/:id", function(req, res) {
     Person.remove({ id:req.params.id}, function(err, removed) {
 
     });
-    Person.find(function(error, _people) {
-        if(error) return console.error(error);
-        people = _people;
-    });
+    getPeople();
     res.json(people);
 });
 

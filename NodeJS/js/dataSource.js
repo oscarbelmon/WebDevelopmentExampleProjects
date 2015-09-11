@@ -7,26 +7,6 @@ var app =angular.module("app", []);
             .success(function(data) {
                $scope.people = data;
             });
-        //getData();
-        //$scope.people = [
-        //    {
-        //        name:"Oscar",
-        //        surname:"Belmonte"
-        //    },
-        //    {
-        //        name:"María del Carmen",
-        //        surname:"Erdozain"
-        //    },
-        //    {
-        //        name:"Martín",
-        //        surname:"Belmonte"
-        //    },
-        //    {
-        //        name:"Gonzalo",
-        //        surname:"Belmonte"
-        //    }
-        //];
-
 
         $scope.currentPerson = function (index) {
             $scope.current_person = $scope.people[index];

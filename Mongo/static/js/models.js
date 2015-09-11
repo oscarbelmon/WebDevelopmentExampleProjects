@@ -4,6 +4,15 @@
 // This is to create a data model
 var mongoose = require("mongoose");
 
+mongoose.connect("mongodb://localhost/people");
+
+var db = mongoose.connection;
+db.on("error", console.error.bind(console, "connection error: "));
+db.once("open", function(callback) {
+    console.log("Connection to the db established.");
+});
+
+
 var personSchema = mongoose.Schema({
     id: Number,
     name: String,

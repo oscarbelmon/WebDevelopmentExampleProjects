@@ -13,11 +13,12 @@ var app =angular.module("app", []);
         }
 
         $scope.removePerson = function (id) {
-            console.log("Removing: " + id);
-            getData.remove(id);
-            $scope.people = getData.retrieve()
+            getData.remove(id)
                 .success(function(data) {
-                    $scope.people = data;
+                    getData.retrieve()
+                        .success(function (data) {
+                            $scope.people = data;
+                        });
                 });
         }
     });
