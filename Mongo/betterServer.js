@@ -16,13 +16,7 @@ db.once("open", function(callback) {
     console.log("Connection to the db established.");
 });
 
-var personSchema = mongoose.Schema({
-    id: Number,
-    name: String,
-    surname: String
-});
-
-var Person = mongoose.model("Person", personSchema);
+var Person = require("./static/js/personModel.js");
 
 // End of DB management
 
