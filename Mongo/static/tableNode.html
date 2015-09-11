@@ -24,7 +24,8 @@
                 <td>{{person.id}}</td>
                 <td>{{person.name}}</td>
                 <td>{{person.surname}}</td>
-                <td><td><button type='button' class='btn btn-info' data-toggle='modal' data-target='#myModal' ng-click='currentPerson($index)'>Info</button></button></td>
+                <td><button type='button' class='btn btn-info' data-toggle='modal' data-target='#myModal' ng-click='currentPerson($index)'>Info</button></button></td>
+                <td><button type="button" class="btn btn-danger" ng-click='removePerson(person.id)'>Remove</button> </td>
             </tr>
             </tbody>
         </table>

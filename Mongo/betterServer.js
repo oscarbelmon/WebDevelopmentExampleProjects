@@ -29,33 +29,24 @@ var Person = mongoose.model("Person", personSchema);
 app.use(express.static("bower_components"));
 app.use(express.static("Mongo/static"));
 
-//var people = [
-//    {
-//        name:"Oscar",
-//        surname:"Belmonte"
-//    },
-//    {
-//        name:"María del Carmen",
-//        surname:"Erdozain"
-//    },
-//    {
-//        name:"Martín",
-//        surname:"Belmonte"
-//    },
-//    {
-//        name:"Gonzalo",
-//        surname:"Belmonte"
-//    }
-//];
-
 var people = {};
 Person.find(function(error, _people) {
     if(error) return console.error(error);
-    console.log(_people);
     people = _people;
 });
 
 app.get('/', function (req, res) {
+    res.json(people);
+});
+
+app.delete("/remove/:id", function(req, res) {
+    Person.remove({ id:req.params.id}, function(err, removed) {
+
+    });
+    Person.find(function(error, _people) {
+        if(error) return console.error(error);
+        people = _people;
+    });
     res.json(people);
 });
 

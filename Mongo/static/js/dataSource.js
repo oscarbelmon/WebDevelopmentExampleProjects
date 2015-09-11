@@ -7,29 +7,18 @@ var app =angular.module("app", []);
             .success(function(data) {
                $scope.people = data;
             });
-        //getData();
-        //$scope.people = [
-        //    {
-        //        name:"Oscar",
-        //        surname:"Belmonte"
-        //    },
-        //    {
-        //        name:"María del Carmen",
-        //        surname:"Erdozain"
-        //    },
-        //    {
-        //        name:"Martín",
-        //        surname:"Belmonte"
-        //    },
-        //    {
-        //        name:"Gonzalo",
-        //        surname:"Belmonte"
-        //    }
-        //];
-
 
         $scope.currentPerson = function (index) {
             $scope.current_person = $scope.people[index];
+        }
+
+        $scope.removePerson = function (id) {
+            console.log("Removing: " + id);
+            getData.remove(id);
+            $scope.people = getData.retrieve()
+                .success(function(data) {
+                    $scope.people = data;
+                });
         }
     });
 
@@ -37,7 +26,11 @@ var app =angular.module("app", []);
         var self = this;
 
         self.retrieve = function () {
-            return $http.get("http://localhost:3000")
+            return $http.get("http://localhost:3000");
+        }
+
+        self.remove = function(id) {
+            return $http.delete("http://localhost:3000/remove/" + id, {'id': id});
         }
 
     }]);
