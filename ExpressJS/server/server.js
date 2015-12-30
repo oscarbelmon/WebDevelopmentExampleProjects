@@ -5,8 +5,8 @@
 var express = require('express');
 var app = express();
 
-app.use(express.static("./../bower_components"));
-app.use(express.static('./static'));
+app.use(express.static(__dirname + "/../bower_components"));
+app.use(express.static(__dirname + '/static'));
 
 var people = [
     {

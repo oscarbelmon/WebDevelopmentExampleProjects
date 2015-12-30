@@ -4,8 +4,6 @@
 var http = require('http');
 var static = require('node-static');
 
-var files = new(static.Server)();
-
 var people = [
     {
         name:"Oscar",
@@ -25,26 +23,20 @@ var people = [
     }
 ];
 
-//app.all('/', function(req, res, next) {
-//    res.header("Access-Control-Allow-Origin", "*");
-//    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//    next();
-//});
+var file = new static.Server(__dirname + '/../public');
+var port = 3000;
 
-//http.use(function(req, res, next) {
-//    res.header("Access-Control-Allow-Origin", "*");
-//    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//    next();
-//});
+http.createServer(function(req, res) {
+    switch(req.url) {
+        case '/':
+            res.writeHead(200, {'Content-Type': 'application/json'});
+            res.end(JSON.stringify(people));
+            break;
+        default:
+            file.serve(req, res);
+            break;
+    }
+}).listen(port);
 
-http.createServer(function (req, res) {
-    res.writeHead("Access-Control-Allow-Origin", "*");
-    //res.writeHead("Access-Control-Allow-Headers", "X-Requested-With");
-    res.writeHead('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-    res.writeHead("Access-Control-Allow-Headers", "X-Requested-With,Content-Type,Cache-Control");
-    res.writeHead(200, {'Content-Type': 'application/json'});
-    res.end(JSON.stringify(people));
-    //files.serve(req, res);
-}).listen(3000, "127.0.0.1");
 
-console.log('Server running at http://127.0.0.1:3000/');
+console.log('Server running at http://127.0.0.1:' + port);
