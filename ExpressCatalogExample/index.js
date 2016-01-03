@@ -23,7 +23,7 @@ app.get("/catalog/:id", function(req, res, next) {
 app.post("/catalog", function(req, res, next) {
     var idProduct = req.body.id;
     if(idProduct in catalog) {
-        res.status(404); // Not found.
+        res.status(400); // Bad request.
         next("A product with code " + idProduct + " already exists.");
     } else {
         var name = req.body.name;
