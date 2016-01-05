@@ -10,8 +10,4 @@ db.on("open", function () {
     console.log("Mongodb connected");
 });
 
-//mongoose.connect("mongodb://localhost/catalog", function () {
-//    console.log("Mongodb connected");
-//});
-
 module.exports = mongoose;
