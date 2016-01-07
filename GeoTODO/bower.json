@@ -1,0 +1,25 @@
+{
+  "name": "angular-leaflet",
+  "version": "0.0.1",
+  "authors": [
+    "Óscar Belmonte Fernández <oscar.belmonte@uji.es>"
+  ],
+  "description": "Example with Angular, Leaflet for create marks.",
+  "main": "index.index",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.6",
+    "angular-leaflet-directive": "~0.8.8",
+    "bootstrap": "~3.3.5",
+    "leaflet-dist": "~0.7.2",
+    "Leaflet.awesome-markers": "~2.0.2",
+    "leaflet.draw": "~0.2.4"
+  }
+}

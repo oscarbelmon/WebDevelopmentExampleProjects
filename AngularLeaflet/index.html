@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <link href="./bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="./bower_components/leaflet/dist/leaflet.css" rel="stylesheet">
+    <script src="./bower_components/jquery/dist/jquery.js"></script>
+    <script src="./bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/leaflet/dist/leaflet.js"></script>
+    <script src="./bower_components/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+    <title>My first AngularJS and Leaflet map</title>
+</head>
+<body ng-controller="TheController">
+    <div class="container">
+        <h1>My first Angular and Leaftlet map</h1>
+        <leaflet id="firstMap" center="castellon" lf-center="center" height="480px" width="100%"></leaflet>
+    </div>
+    <script src="./js/myScripts.js"></script>
+</body>
+</html>
