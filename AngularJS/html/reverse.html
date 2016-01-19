@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en" ng-app="app">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,13 +7,14 @@
     <title>My first AngularJS</title>
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="../js/reverse.js"></script>
 </head>
-<body>
-    <div>
-        <label>Name:</label>
-        <input type="text" ng-model="yourName" placeholder="Enter a name here">
-        <hr>
-        <h1>Hello {{yourName}}!</h1>
-    </div>
+<body ng-controller="MyController as myController">
+<div>
+    <label>Name:</label>
+    <input type="text" ng-model="yourName" ng-change="reverse(yourName)" placeholder="Enter a name here">
+    <hr>
+    <h1>Hello {{reversed}}!</h1>
+</div>
 </body>
 </html>
