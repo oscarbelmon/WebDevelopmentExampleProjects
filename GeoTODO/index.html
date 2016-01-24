@@ -2,6 +2,7 @@
 <html ng-app="demoapp">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
     <link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="bower_components/leaflet.draw/dist/leaflet.draw.css" />
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -14,19 +15,20 @@
     <script src="bower_components/leaflet.draw/dist/leaflet.draw.js"></script>
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular-moment/angular-moment.min.js"></script>
+    <!--<script src="bower_components/angular-moment/angular-moment.min.js"></script>-->
+    <title>Geo-TODO</title>
 </head>
 
 <body ng-controller="TheController">
 <div class="container">
-    <h1>First steps, basic example</h1>
+    <h1>A simple Geo-TODO example</h1>
     <leaflet center="castellon" markers="markers" event-broadcast="events" width="100%" height="480px"></leaflet>
 </div>
 <div class="container">
 
 <div class="row">
     <div class="col-md-8">
-        <h2>The data</h2>
+        <h2>TODO List</h2>
         <table class="table table-hover">
             <thead>
                 <tr><td>Message</td><td>Due date</td></tr>
@@ -35,7 +37,7 @@
             <tr ng-repeat="marker in markers" ng-mouseover="showInfo($index)">
                 <td>{{marker.message}}</td>
                 <td>{{marker.dueDate | date: "dd/MM/yyyy (hh:mm)"}}</td>
-                <td><button ng-click="showInfo($index)" type="button" class="btn btn-info">Info</button></td>
+                <!--<td><button ng-click="showInfo($index)" type="button" class="btn btn-info">Info</button></td>-->
                 <td><button ng-click="removeMark($index)" type="button" class="btn btn-danger">Remove</button></td>
             </tr>
             </tbody>

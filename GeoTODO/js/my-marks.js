@@ -8,24 +8,21 @@ var selected = {
 
 app.controller("TheController", [ "$scope", "$http", "leafletEvents", function($scope, $http, leafletEvents) {
     angular.extend($scope, {
-        london: {
-            lat: 51.505,
-            lng: -0.09,
-            zoom: 8
-        },
         castellon: {
             lat: 39.98685368305097,
             lng: -0.04566192626953125,
             zoom: 14
         },
-        events: {
-        }
+        events: {}
     });
 
     $scope.markers = new Array();
     $scope.currentMarker = {};
-    $scope.$on("leafletDirectiveMap.click", function(event, args) {
-        addMarker(args.leafletEvent);
+    $scope.$on("leafletDirectiveMap.mousedown", function(event, args) {
+        var mouseButton = args.leafletEvent.originalEvent.button;
+        if(mouseButton == 2) { // Right button
+            addMarker(args.leafletEvent);
+        }
     });
 
     $scope.showInfo = function(index){
@@ -66,11 +63,11 @@ app.controller("TheController", [ "$scope", "$http", "leafletEvents", function($
         var marker = {
             lat: parseFloat(response.data.lat),
             lng: parseFloat(response.data.lon),
-            message: "New message",
+            message: "Remember this....",
             dueDate: _dueDate,
             display_name: response.data.display_name
         };
-        updateCurrentMarker(marker);
         $scope.markers.push(marker);
+        updateCurrentMarker(marker);
     }
 }]);
