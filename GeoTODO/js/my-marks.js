@@ -6,7 +6,7 @@ var selected = {
     markerColor: "red",
 }
 
-app.controller("TheController", [ "$scope", "$http", "leafletEvents", function($scope, $http, leafletEvents) {
+app.controller("TheController", [ "$scope", "$http", function($scope, $http) {
     angular.extend($scope, {
         castellon: {
             lat: 39.98685368305097,
@@ -44,7 +44,8 @@ app.controller("TheController", [ "$scope", "$http", "leafletEvents", function($
     // I shall move these to a factory
     function addMarker(data) {
         var urlString = "http://nominatim.openstreetmap.org/reverse?format=json&lat=" +
-            data.latlng.lat + "&lon=" + data.latlng.lng + "&zoom=18&addressdetails=1";
+            data.latlng.lat + "&lon=" +
+            data.latlng.lng + "&zoom=18&addressdetails=1";
         $http.get(urlString).then(reverseGeocoding);
     }
 
