@@ -1,0 +1,22 @@
+{
+  "name": "Exercises",
+  "homepage": "https://github.com/oscarbelmon/WebDevelopmentExampleProjects",
+  "authors": [
+    "Óscar Belmonte Fernández <oscar.belmonte@uji.es>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.9"
+  }
+}

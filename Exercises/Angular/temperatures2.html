@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="temperatures">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperatures conversion</title>
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+    <script src="js/temperatures.js"></script>
+</head>
+<body ng-controller="TemperaturesController as controller">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"> <!-- Celsius -->
+                Celsius: <input type="number" ng-model="celsius" ng-init="celsius = 0" ng-change="calculus()">
+            </div>
+            <div class="col-md-4"> <!-- Fahrenheit -->
+                Fahrenheit: {{fahrenheit}}
+            </div>
+            <div class="col-md-4"> <!-- Reamur -->
+                Reamur: {{reamur}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

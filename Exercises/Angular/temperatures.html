@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <title>Temperatures conversion</title>
+    <link href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../bower_components/angular/angular.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"> <!-- Celsius -->
+                Celsius: <input type="number" ng-model="celsius" ng-init="celsius = 0">
+            </div>
+            <div class="col-md-4"> <!-- Fahrenheit -->
+                Fahrenheit: {{celsius * 9.0 / 5.0 + 32.0}}
+            </div>
+            <div class="col-md-4"> <!-- Reamur -->
+                Reamur: {{celsius * 4.0 / 5.0}}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
