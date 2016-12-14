@@ -1,0 +1,20 @@
+{
+  "name": "first_project",
+  "version": "1.0.0",
+  "description": "My first project using Angular.",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm",
+    "bootstrap",
+    "angularjs"
+  ],
+  "author": "Óscar Belmonte Fernández",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.0"
+  }
+}
