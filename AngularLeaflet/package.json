@@ -1,0 +1,22 @@
+{
+  "name": "AngularLeaflet",
+  "version": "1.0.0",
+  "description": "My first project using Angularjs and AngularLeaflet",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angular",
+    "leaflet",
+    "bootstrap"
+  ],
+  "author": "Óscar Belmonte Fernández",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-leaflet-directive": "^0.10.0",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1"
+  }
+}
