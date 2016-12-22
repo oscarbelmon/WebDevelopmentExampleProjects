@@ -17,6 +17,7 @@
     "angular": "^1.6.0",
     "angular-leaflet-directive": "^0.10.0",
     "bootstrap": "^3.3.7",
+    "drmonty-leaflet-awesome-markers": "^2.0.2",
     "jquery": "^3.1.1"
   }
 }
