@@ -1,11 +1,7 @@
-/**
- * Created by oscar on 10/09/15.
- */
-
 var express = require('express');
 var app = express();
 
-app.use(express.static(__dirname + "/../bower_components"));
+app.use(express.static(__dirname + "/../node_modules"));
 app.use(express.static(__dirname + '/public'));
 
 var people = [
