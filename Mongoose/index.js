@@ -96,9 +96,9 @@ app.delete("/catalog/:id", function(req, res, next) {
 });
 
 app.get("/catalog", function(req, res) {
-    var stream = Product.find().stream();
+    var cursor = Product.find().cursor();
     var results = {};
-    stream.on('data', function(doc) {
+    cursor.on('data', function(doc) {
         results[doc.id] = doc;
     }).on("error", function(err) {
         res.status(500);
