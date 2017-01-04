@@ -1,6 +1,3 @@
-/**
- * Created by oscar on 4/09/15.
- */
 var app =angular.module("app", []);
     app.controller("MyController", function($scope, getData) {
         $scope.people = getData.retrieve()
