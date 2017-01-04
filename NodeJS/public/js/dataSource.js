@@ -1,20 +1,23 @@
 var app =angular.module("app", []);
-    app.controller("MyController", function($scope, getData) {
-        $scope.people = getData.retrieve()
-            .success(function(data) {
-               $scope.people = data;
-            });
+    app.controller("MyController", ["$scope", "getData", function($scope, getData) {
+        $scope.people = getData.retrieve(function(response) {
+            console.log(response);
+            $scope.people = response.data;
+        }, function(response) {
+            console.log(error);
+        });
 
         $scope.currentPerson = function (index) {
             $scope.current_person = $scope.people[index];
         }
-    });
+    }]);
 
     app.service("getData", ["$http", function($http) {
         var self = this;
 
-        self.retrieve = function () {
+        self.retrieve = function(succes, error) {
             return $http.get("http://localhost:3000")
+                .then(succes, error);
         }
 
     }]);

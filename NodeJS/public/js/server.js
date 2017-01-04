@@ -23,7 +23,7 @@ var people = [
     }
 ];
 
-var file = new static.Server(__dirname + '/../public');
+var file = new static.Server(__dirname + '/../../public');
 var port = 3000;
 
 http.createServer(function(req, res) {
