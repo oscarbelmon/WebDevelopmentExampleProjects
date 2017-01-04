@@ -1,6 +1,3 @@
-/**
- * Created by oscar on 3/01/16.
- */
 var db = require("./db");
 
 var Product = db.model('Product', {
