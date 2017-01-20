@@ -8,7 +8,7 @@
     <link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <script src="../node_modules/jquery/dist/jquery.js"></script>
     <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="../node_modules/angular/angular.min.js"></script>
+    <script src="../node_modules/angular/angular.js"></script>
     <script src="../js/dataSource.js"></script>
 </head>
 <body ng-controller="MyController as myController">
@@ -23,7 +23,7 @@
             <tr ng-repeat="person in people">
                 <td>{{person.name}}</td>
                 <td>{{person.surname}}</td>
-                <td><td><button type='button' class='btn btn-info' data-toggle='modal' data-target='#myModal' ng-click='currentPerson($index)'>Info</button></button></td>
+                <td><button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" ng-click="currentPerson($index)">Info</button></td>
             </tr>
         </tbody>
     </table>
