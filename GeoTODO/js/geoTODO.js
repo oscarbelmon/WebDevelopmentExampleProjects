@@ -23,7 +23,6 @@ app.controller("TheController", [
         });
 
         $scope.markers = new Array;
-        // var currentMarker = {};
         $scope.currentMarker = {};
 
         $scope.$on("leafletDirectiveMap.mousedown", function(event, args) {
@@ -44,7 +43,8 @@ app.controller("TheController", [
         function addMarker(response) {
             var marker = {lat: parseFloat(response.data.lat),
                 lng: parseFloat(response.data.lon),
-                message: "Hello", dueDate: new Date(),
+                message: "Hello",
+                dueDate: new Date(),
                 postalAddress: response.data.display_name
             };
             $scope.markers.push(marker);
@@ -53,12 +53,9 @@ app.controller("TheController", [
 
         $scope.showInfo = function(index) {
             $scope.currentMarker = $scope.markers[index];
-            console.log($scope.currentMarker);
         }
 
         $scope.updateCurrentMarker = function(indexCurrentMarker) {
-            console.log("HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
-            console.log(indexCurrentMarker);
             $scope.currentMarker.focus = false;
             $scope.currentMarker = $scope.markers[indexCurrentMarker];
             $scope.currentMarker.focus = true;
