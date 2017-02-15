@@ -62,8 +62,8 @@ app.controller("TheController", [
             $scope.currentMarker.focus = true;
         }
 
-        $scope.removeMark = function(index) {
-            if ($scope.markers[index] === currentMarker) {
+        $scope.removeMark = function (index) {
+            if($scope.markers[index] === $scope.currentMarker) {
                 $scope.currentMarker = {};
                 $scope.currentMarker.focus = false;
             }
