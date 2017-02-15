@@ -13,6 +13,7 @@
     "angular": "^1.6.0",
     "angular-leaflet-directive": "^0.10.0",
     "bootstrap": "^3.3.7",
-    "jquery": "^3.1.1"
+    "jquery": "^3.1.1",
+    "leaflet": "0.7.2"
   }
 }
