@@ -24,5 +24,10 @@
     "pedantic": false,
     "smartLists": true,
     "langPrefix": "language-"
+  },
+  "sync": {
+    "id": "59de4538c1af0549a2b8c4ab",
+    "name": "oscarbelmon/WebDevelopmentExampleProjects",
+    "useImdoneioForPriority": true
   }
 }
